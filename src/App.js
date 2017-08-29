@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
+import {BrowserRouter} from 'react-router-dom'
 import DataProvider from './containers/DataProvider/DataProvider'
 
 class App extends Component {
   render () {
     return (
-      <div>
-        <h1>Create React App Boilerplate Installed</h1>
+      <BrowserRouter>
         <DataProvider />
-      </div>
+      </BrowserRouter>
     )
   }
 }

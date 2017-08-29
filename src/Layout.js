@@ -1,11 +1,23 @@
 import React, { Component } from 'react'
+import * as AppPropTypes from './appPropTypes'
+import NavBar from './NavBar'
+import Routes from './Routes'
 
 class Layout extends Component {
+  static propTypes = {
+    data: AppPropTypes.data
+  }
+  state = {
+    options: []
+  }
+  componentDidMount = () => this.setState({ options: ['home', 'about', 'products'] })
   render () {
-    console.log("From Layout", this.props.products)
     return (
       <div>
-        Hello from Layout!
+        <NavBar options={this.state.options} />
+        <Routes
+          data={ this.props.data }
+        />
       </div>
     )
   }
